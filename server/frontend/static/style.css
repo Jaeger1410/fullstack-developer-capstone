@@ -13,6 +13,15 @@ img{
   margin-bottom: 1%;
 }
 
+.card-contact{
+    border: rgb(100, 120, 222) 5px solid;
+    display: flex;  
+    flex-direction: column;
+    margin-left:5%;
+    margin-right:5%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
 .row{
   display: flex;  
   flex: 1;
@@ -24,8 +33,37 @@ img{
 }
 
 .container{
-  justify-content: center;
+    justify-content: center;
 }
+
+.container-columns{
+    display:flex;
+}
+
+/* .column{
+    flex: 1;
+    padding: 15px;
+    margin-top: auto;
+} */
+.contact-details{
+    flex: 1;
+    padding: 15px; 
+    border: 10px;
+    margin-top: 5%;
+    margin-bottom: 0%;
+    margin-right: auto;
+}
+
+.contact-img{
+    position: relative; 
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 10%;
+    border-right: 2px solid black;
+    padding-right: 7.5%;
+}
+
 .details{
   font-size: 20px;
   color: rgb(97, 64, 128);
