@@ -68,9 +68,9 @@ const Dealer = () => {
 
 
 return(
-  <div style={{margin:"20px"}}>
+  <div style={{margin:"1px"}}>
       <Header/>
-      <div style={{marginTop:"10px"}}>
+      <div style={{marginTop:"1px"}}>
       <h1 style={{color:"grey"}}>{dealer.full_name}{postReview}</h1>
       <h4  style={{color:"grey"}}>{dealer['city']},{dealer['address']}, Zip - {dealer['zip']}, {dealer['state']} </h4>
       </div>
