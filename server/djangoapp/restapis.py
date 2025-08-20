@@ -19,7 +19,7 @@ def get_request(endpoint, **kwargs):
         
     request_url = backend_url + endpoint + "?" + params
 
-    print("GET from {}".format(request))
+    print("GET from {}".format(request_url))
     try:
         # Call get method of requests library with URL and parameters
         response = requests.get(request_url)
