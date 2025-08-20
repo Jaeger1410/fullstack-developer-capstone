@@ -68,7 +68,7 @@ def initiate():
          
                      
          {"name": "A5"
-         "type": "SUV
+        ""type": "SU,
         , "year": 2023, "car_make": car_m
         ake_instances[2]},
         {
