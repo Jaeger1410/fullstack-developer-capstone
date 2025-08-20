@@ -59,7 +59,7 @@ def initiate():
         "year": 2023,
         "car_make": car_make_instances[2]
         },
-         
+        {
          "car_make": 
         ar_make_instan
         es[2]},
