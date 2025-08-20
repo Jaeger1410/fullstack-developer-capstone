@@ -27,7 +27,7 @@ def initiate():
         "name": "Qashqai",
         "type": "SUV",
         "year": 2023,
-        "car_make": car_make_instances[0]\
+        "car_make": car_make_instances[0]
         },
         {
         "name": "XTRAIL",
