@@ -72,7 +72,7 @@ def initiate():
         , "year": 2023, "car_make": car_m
         ake_instances[2]},
         {
-        "name": "A6", "type
+        "name": "Sorrento",
         : "SUV", "year
         : 2023, "car_
         ake": car_make_instances[2]},
