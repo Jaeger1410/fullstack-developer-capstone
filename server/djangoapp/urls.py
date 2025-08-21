@@ -7,14 +7,34 @@ from . import views
 app_name = 'djangoapp'
 urlpatterns = [
     # # path for registration
-    path(route='register', view=views.registration, name='registration'),
+    path(
+        route='register',
+        view=views.registration,
+        name='registration'
+        ),
     # path for login
-    path(route='login', view=views.login_user, name='login'),
-    path(route='logout', view=views.logout_request, name='logout'),
+    path(
+        route='login',
+        view=views.login_user,
+        name='login'
+        ),
+    path(
+        route='logout',
+        view=views.logout_request,
+        name='logout'
+        ),
     # path for get_cars
-    path(route='get_cars', view=views.get_cars, name='getcars'),
+    path(
+        route='get_cars',
+        view=views.get_cars,
+        name='getcars'
+        ),
     # path for get_dealerships
-    path(route='get_dealers/', view=views.get_dealerships, name='get_dealers'),
+    path(
+        route='get_dealers/',
+        view=views.get_dealerships,
+        name='get_dealers'
+        ),
     path(
         route='get_dealers/<str:state>',
         view=views.get_dealerships,
@@ -33,5 +53,15 @@ urlpatterns = [
         name='dealer_details'
         ),
     # path for add a review view
-    path(route='add_review', view=views.add_review, name='add_review'),
+    path(
+        route='add_review',
+        view=views.add_review,
+        name='add_review'
+        ),
+    # path for searchcars_request
+    path(
+        route='get_inventory/<int:dealer_id>',
+        view=views.get_inventory,
+        name='get_inventory'
+        ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
