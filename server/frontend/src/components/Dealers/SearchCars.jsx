@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from './react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import Header from '../Header/Header';
 
@@ -16,7 +16,7 @@ const SearchCars = () => {
 
     const fetchDealer = async () => {
         const res = await fetch(fetch_url, {
-            method: "GET"
+            method: 'GET'
         });
         const retobj = await res.json();
         if (retobj.status === 200) {
@@ -38,7 +38,7 @@ const SearchCars = () => {
 
     const fetchCars = async () => {
         const res = await fetch(dealer_url, {
-            method: "GET"
+            method: 'GET'
         });
         const retobj = await res.json();
 
@@ -84,28 +84,28 @@ const SearchCars = () => {
             if (currmileage === 50000) {
                 cars = cars.filter(car => car.mileage <= currmileage);
             } else if (currmileage === 100000){
-            cars = cars.filter(car => car.mileage <= currmileage && car.mileage > 50000);
+                cars = cars.filter(car => car.mileage <= currmileage && car.mileage > 50000);
             } else if (currmileage === 150000){
-            cars = cars.filter(car => car.mileage <= currmileage && car.mileage > 100000);
+                cars = cars.filter(car => car.mileage <= currmileage && car.mileage > 100000);
             } else if (currmileage === 200000){
-            cars = cars.filter(car => car.mileage <= currmileage && car.mileage > 150000);
+                cars = cars.filter(car => car.mileage <= currmileage && car.mileage > 150000);
             } else {
-            cars = cars.filter(car => car.mileage > 200000);
+                cars = cars.filter(car => car.mileage > 200000);
             }
         }
 
         if (priceIdx !== 0) {
             let currprice = parseInt(document.getElementById('price').value);
             if(currprice === 20000) {
-              cars = cars.filter(car => car.price <= currprice);
+                cars = cars.filter(car => car.price <= currprice);
             } else if (currprice === 40000){
-              cars = cars.filter(car => car.price <= currprice && car.price > 20000);
+                cars = cars.filter(car => car.price <= currprice && car.price > 20000);
             } else if (currprice === 60000){
-              cars = cars.filter(car => car.price <= currprice && car.price > 40000);
+                cars = cars.filter(car => car.price <= currprice && car.price > 40000);
             } else if (currprice === 80000){
-              cars = cars.filter(car => car.price <= currprice && car.price > 60000);
+                cars = cars.filter(car => car.price <= currprice && car.price > 60000);
             } else {
-              cars = cars.filter(car => car.price > 80000);
+                cars = cars.filter(car => car.price > 80000);
             }
         }
 
@@ -117,11 +117,11 @@ const SearchCars = () => {
     }
 
     let SearchCarsByMake = async () => {
-        let make = document.getElementById("make").value;
+        let make = document.getElementById('make').value;
         dealer_url = dealer_url + "?make=" + make;
 
         const res = await fetch(dealer_url, {
-            method: "GET",
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             }
@@ -135,11 +135,11 @@ const SearchCars = () => {
     }
 
     let SearchCarsByModel = async () => {
-        let model = document.getElementById("model").value;
+        let model = document.getElementById('model').value;
         dealer_url = dealer_url + "?model=" + model;
 
         const res = await fetch(dealer_url, {
-            method: "GET",
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -153,10 +153,17 @@ const SearchCars = () => {
     }
 
     let SearchCarsByYear = async () => {
-        let year = document.getElementById("year").value;
+        let year = document.getElementById('year').value;
         if (year !== "all") {
             dealer_url = dealer_url + "?year=" + year;
         }
+        
+        const res = await fetch(dealer_url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
 
         const retobj = await res.json();
 
@@ -166,13 +173,13 @@ const SearchCars = () => {
     }
 
     let SearchCarsByMilage = async () => {
-        let mileage = document.getElementById("milage").value;
+        let mileage = document.getElementById('milage').value;
         if (mileage !== "all") {
             dealer_url = dealer_url + "?mileage=" + mileage;
         }
 
         const res = await fetch(dealer_url, {
-            method: "GET",
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             }
@@ -192,7 +199,7 @@ const SearchCars = () => {
         }
 
         const res = await fetch(dealer_url, {
-            method: "GET",
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             }
@@ -225,7 +232,7 @@ const SearchCars = () => {
             <h1 style={{ marginBottom: '20px'}}> Cars at {dealer.full_name}</h1>
             <div>
                 <span style={{ marginLeft: '10px', paddingLeft: '10px'}}>Make</span>
-                <select style={{ marginLeft: '10px', marginRight: '10px', paddingLeft: '10px', borderRadius: '10px',}} name="make" id="make" onChange={SearchCarsByMake}>
+                <select style={{ marginLeft: '10px', marginRight: '10px', paddingLeft: '10px', borderRadius: '10px'}} name="make" id="make" onChange={SearchCarsByMake}>
                     {makes.length === 0 ? (
                         <option value=''>No data found</option>
                     ):(
@@ -240,7 +247,7 @@ const SearchCars = () => {
                     )}
                 </select>
                 <span stylr={{ marginLeft: '10px', paddingLeft: '10px'}}>Model</span>
-                <select style={{ marginLeft: '10px', marginRight: '10px', paddingLeft: '10px', borderRadius: '10px'}} name="model" onChange={SearchCarsByModel}>
+                <select style={{ marginLeft: '10px', marginRight: '10px', paddingLeft: '10px', borderRadius: '10px'}} name="model" id="model" onChange={SearchCarsByModel}>
                     {models.length === 0 ? (
                         <option value=''>No data found</option>
                     ):(

@@ -16,7 +16,7 @@ mongoose.connect("mongodb://mongo_db:27017/",{ dbName: 'dealershipDB' })
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('MongoDB connection error:', err));
 
-const Cars = require('./inventory');
+const Cars = require('./inventory.js');
 
 try {
     Cars.deleteMany({}).then(() => {
@@ -29,7 +29,7 @@ try {
 
 app.get('/', async (req,res) => {
     res.send('Welcome to the Mongoose API');
-})
+});
 
 app.get('/cars/:id', async (req,res) => {
     try {
@@ -48,7 +48,7 @@ app.get('/carsbymake/:id/:make', async (req,res) => {
     } catch (error) {
         res.status(500).json({ error: 'Error fetching reviews by car make and model'});
     }
-})
+});
 
 app.get('/carsbymodel/:id/:model', async (req,res) => {
     try {
